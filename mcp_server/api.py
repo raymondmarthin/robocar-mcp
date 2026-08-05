@@ -1,10 +1,19 @@
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
 from .dashboard import DASHBOARD_HTML
 from .state import robocar_state
 
 api = FastAPI(title="RoboCar MCP API")
+
+api.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["mcp-session-id"],
+)
 
 
 @api.get("/", response_class=HTMLResponse)
