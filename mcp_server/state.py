@@ -45,6 +45,8 @@ class RobocarState:
                 self._state["heading"] = (self._state["heading"] - degree) % 360
             elif tool_name == "stop":
                 self._state["speed"] = 0.0
+            elif tool_name == "reset":
+                self._state = {"x": 0.0, "y": 0.0, "heading": 0.0, "speed": 0.0, "battery": 100.0}
             elif tool_name == "get_status":
                 pass
             else:

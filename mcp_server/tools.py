@@ -41,6 +41,13 @@ def stop() -> dict:
 
 
 @mcp.tool()
+def reset() -> dict:
+    """Kembalikan robocar ke posisi awal (x=0, y=0, heading=0, battery=100)."""
+    entry = robocar_state.apply_command("reset", {})
+    return entry["result_state"]
+
+
+@mcp.tool()
 def get_status() -> dict:
     """Ambil state terkini robocar (posisi, arah, speed, baterai)."""
     entry = robocar_state.apply_command("get_status", {})

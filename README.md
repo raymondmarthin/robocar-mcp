@@ -96,6 +96,7 @@ Canvas menampilkan posisi robocar real-time (segitiga hijau) beserta jejak linta
 | `turn_left` | `degree: float` | Belok kiri `degree` derajat |
 | `turn_right` | `degree: float` | Belok kanan `degree` derajat |
 | `stop` | - | Berhenti |
+| `reset` | - | Kembalikan ke posisi awal (x=0, y=0, heading=0, battery=100) |
 | `get_status` | - | Ambil state terkini |
 
 ## Endpoint REST API
