@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: robocar-mcp
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m mcp_server.server_http
